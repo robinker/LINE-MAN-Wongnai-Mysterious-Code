@@ -5,6 +5,7 @@ package main
 import (
 	"encoding/base64"
 	"fmt"
+	"strings"
 )
 
 func reverseString(text string) string {
@@ -23,6 +24,7 @@ func main() {
 		panic(err)
 	}
 	fmt.Println(string(sd))
-	whatIsIt = reverseString(string(sd))
+	// reverse string and replace : with space
+	whatIsIt = strings.Replace(reverseString(string(sd)), ":", " ", -1)
 	fmt.Println(whatIsIt)
 }
